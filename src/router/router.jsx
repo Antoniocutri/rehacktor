@@ -2,8 +2,9 @@ import { createBrowserRouter } from "react-router";
 import routes from "./routes"
 import Layout from "../components/layouts/Layout"
 import Homepage from "../views/Homepage"
-import { getAllGamesLoader, getAllGenres, getSearchedGames } from "./loader";
+import { getAllGamesLoader, getAllGenres, getFilterdByGenres, getSearchedGames } from "./loader";
 import SearcPage from "../views/SearchPage";
+import GenrePage from "../views/GenrePage";
 
 
 const router = createBrowserRouter([
@@ -21,6 +22,11 @@ const router = createBrowserRouter([
                 path: routes.search,
                 Component: SearcPage,
                 loader: getSearchedGames
+            },
+            {
+                path: routes.genres,
+                Component: GenrePage,
+                loader: getFilterdByGenres
             },
         ]
     }

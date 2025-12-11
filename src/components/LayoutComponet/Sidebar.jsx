@@ -9,7 +9,7 @@ export default function Sidebar({genres}) {
                     {genres.map((genre)=>{
                         return(
                             <li className="mb-2" key={genre.id}>
-                                <Link>{genre.name}</Link>
+                                <Link to={`/genre/${genre.slug}`}>{genre.name}</Link>
                             </li>
                         )
                     })}

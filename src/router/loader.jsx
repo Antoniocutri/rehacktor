@@ -15,3 +15,9 @@ export async function getAllGenres(){
     const json = await promise.json();
     return json.results;
 }
+
+export async function getFilterdByGenres({params}){
+    const promise = await fetch( `https://api.rawg.io/api/games?key=${import.meta.env.VITE_API_KEY}&genres=${params.slug}`);
+    const json = await promise.json();
+    return json.results;
+}
