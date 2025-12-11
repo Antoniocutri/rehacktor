@@ -1,4 +1,5 @@
 import { useLoaderData } from "react-router"
+import GameList from "../components/HomeComponents/GameList"
 
 export default function Homepage() {
 
@@ -7,7 +8,15 @@ export default function Homepage() {
 
     return(
         <>
-            <h1>Homepage</h1>
+            <h1 className="font-electro text-3x1 text-center font-bold">Reactor</h1>
+
+            <GameList>
+                {games.map((game)=>{
+                    return(
+                        <GameList.Card key={game.id} game={game}/>
+                    )
+                })}
+            </GameList>
         </>
     )
 }
