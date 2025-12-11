@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router";
 import routes from "./routes"
 import Layout from "../components/layouts/Layout"
 import Homepage from "../views/Homepage"
+import { getAllGamesLoader } from "./loader";
 
 
 const router = createBrowserRouter([
@@ -11,7 +12,8 @@ const router = createBrowserRouter([
         children:[
             {
                 path: routes.home,
-                Component: Homepage
+                Component: Homepage,
+                loader: getAllGamesLoader
             }
         ]
     }
