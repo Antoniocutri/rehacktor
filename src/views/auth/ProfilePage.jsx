@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { UserContext } from "../../context/UserContext";
 import avatar from "../../assets/avatar.jpg"
+import { Link } from "react-router-dom";
+import routes from "../../router/routes";
 
 export default function ProfilePage() {
     const {user, profile} = useContext(UserContext)
@@ -26,6 +28,8 @@ export default function ProfilePage() {
                 <p>Name: {profile.first_name} {profile.last_name}</p>
                 <p>Username: {profile.username}</p>
                 <p>Email:{user.email}</p>
+
+                <Link className="btn btn-outline mt-3" to={routes.profile_settings}>Settings</Link>
 
                 </article>
             </section>

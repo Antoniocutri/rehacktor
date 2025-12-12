@@ -120,8 +120,7 @@ export default function RegisterPage() {
                         </div>
 
                         <button
-                            type="submit"
-                            className="w-full bg-blue-600 text-white py-3 rounded-xl shadow hover:bg-blue-700 transition">
+                            className="w-full py-3 rounded-xl btn btn-neutral">
                             Registrati
                         </button>
                     </form>
