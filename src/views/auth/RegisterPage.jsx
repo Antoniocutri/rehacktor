@@ -2,6 +2,8 @@ import { useForm } from "react-hook-form";
 import { FaEnvelope, FaLock, FaUser } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import supabase from "../../database/supabase";
+import { useContext } from "react";
+import { UserContext } from "../../context/UserContext";
 
 export default function RegisterPage() {
 
@@ -11,10 +13,13 @@ export default function RegisterPage() {
         formState: { errors },
     } = useForm();
 
+    const {signUp} = useContext(UserContext)
+
     const navigate = useNavigate()
 
     const onSubmit = async (user_data)=>{
-        let {data, error} = await supabase.auth.signUp({
+        
+        await signUp({
             email: user_data.email,
             password: user_data.password,
             options: {
@@ -25,8 +30,7 @@ export default function RegisterPage() {
                 }
             }
         })
-        console.log(user_data)
-        console.log(error)
+
         navigate('/')
     };
 

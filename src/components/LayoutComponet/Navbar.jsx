@@ -1,13 +1,24 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaSearch } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import routes from "../../router/routes";
+import { UserContext } from "../../context/UserContext";
+import { FaArrowRightToBracket } from "react-icons/fa6";
 
 export default function Navbar() {
     const [slug, setSlug] = useState();
 
     const handleChange = (e) =>{
         setSlug(e.target.value)
+    }
+
+    const navigate = useNavigate()
+
+    const {user, signOut} = useContext(UserContext)
+
+    const handleLogout = async ()=>{
+        navigate('/')
+        signOut()
     }
 
     return(
@@ -19,12 +30,20 @@ export default function Navbar() {
                 <div className="flex gap-2">
 
                     <ul>
-                        <li>
-                            <Link to={routes.register}>Registrati</Link>
-                        </li>
-                        <li>
-                            <Link to={routes.login}>Login</Link>
-                        </li>
+                        {(!user &&( 
+                            <>
+                                <li>
+                                    <Link to={routes.register}>Registrati</Link>
+                                </li>
+                                <li>
+                                    <Link to={routes.login}>Login</Link>
+                                </li>
+                            </>
+                        ))||
+                            <li onClick={handleLogout}>
+                                <p>Logout</p>
+                            </li>
+                        }
                     </ul>
                     
 
@@ -34,9 +53,11 @@ export default function Navbar() {
                     <div className="dropdown dropdown-end">
                         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
-                                <img
-                                    alt="Tailwind CSS Navbar component"
-                                    src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                                {(user &&( 
+                                    <img
+                                        alt="Tailwind CSS Navbar component"
+                                        src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                                ))|| <FaArrowRightToBracket className="text-3xl"/>}
                             </div>
                         </div>
                         <ul
