@@ -40,9 +40,15 @@ export default function Navbar() {
                                 </li>
                             </>
                         ))||
+                        <>
+                            <li>
+                               <Link to={routes.profile}>Profile</Link> 
+                            </li>
+
                             <li onClick={handleLogout}>
                                 <p>Logout</p>
                             </li>
+                        </>
                         }
                     </ul>
                     
