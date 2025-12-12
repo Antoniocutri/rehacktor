@@ -17,6 +17,15 @@ export default function Navbar() {
                     <Link className="btn btn-ghost text-xl" to={routes.home}>Reactor</Link>
                 </div>
                 <div className="flex gap-2">
+
+                    <ul>
+                        <li>
+                            <Link to={routes.register}>Registrati</Link>
+                        </li>
+                        <li>
+                            <Link to={routes.login}>Login</Link>
+                        </li>
+                    </ul>
                     
 
                     <input type="text" placeholder="Search" onChange={handleChange} className="input input-bordered w-24 md:w-auto" />
