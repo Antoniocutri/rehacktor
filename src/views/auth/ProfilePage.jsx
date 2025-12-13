@@ -8,6 +8,7 @@ import supabase from "../../database/supabase";
 export default function ProfilePage() {
     const {user, profile} = useContext(UserContext)
     const [avatarUrl, setAvatarUrl]= useState()
+    const [userFavourites, setUserFavourites] = useState()
 
     const download_avatar = async () => {
         if (profile){
@@ -19,9 +20,20 @@ export default function ProfilePage() {
         }
     }
 
+    const get_favourite = async () =>{
+        if (profile) {
+            let { data: favourites, error } = await supabase
+                . from("favourites")
+                .select("*")
+                .eq("profile_id", profile.id);
+            setUserFavourites(favourites);
+        }
+    }
+
     useEffect(
         ()=>{
-            download_avatar()
+            download_avatar();
+            get_favourite();
         },[profile]
     )
 
@@ -51,6 +63,20 @@ export default function ProfilePage() {
 
                 </article>
             </section>
+
+            <section className="grid grid-cols-4 gap-4 my-10">
+                {userFavourites &&
+                    userFavourites.map( (game) =>{
+                        return (
+                            <div className="card bg-base-100 shadow-sm" key={game.id}>
+                                <div className="card-body">
+                                    <h2 className="card-title">{game.game_name}</h2>
+                                </div>
+                            </div>
+                        );
+                    })}
+            </section>
+
         </>
         )}
         </main>
