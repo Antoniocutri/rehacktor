@@ -1,11 +1,29 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../context/UserContext";
 import avatar from "../../assets/avatar.jpg"
 import { Link } from "react-router-dom";
 import routes from "../../router/routes";
+import supabase from "../../database/supabase";
 
 export default function ProfilePage() {
     const {user, profile} = useContext(UserContext)
+    const [avatarUrl, setAvatarUrl]= useState()
+
+    const download_avatar = async () => {
+        if (profile){
+            const { data, error } = await supabase.storage
+                .from("avatars")
+                .download(profile.avatar_url);
+            const url = URL. createObjectURL(data);
+            setAvatarUrl(url);
+        }
+    }
+
+    useEffect(
+        ()=>{
+            download_avatar()
+        },[profile]
+    )
 
     return(
         <main className="h-screen">
@@ -13,7 +31,7 @@ export default function ProfilePage() {
         <>
             <article className="mt-10 flex flex-col items-center">
                 <img
-                    src={avatar}
+                    src={avatarUrl ?? avatar}
                     className="w-[100px].h-[100px] .rounded-full"
                     alt="Profile Image"
                 />
