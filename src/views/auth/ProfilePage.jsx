@@ -38,47 +38,53 @@ export default function ProfilePage() {
     )
 
     return(
-        <main className="h-screen">
-        {user && profile &&(
-        <>
-            <article className="mt-10 flex flex-col items-center">
-                <img
-                    src={avatarUrl ?? avatar}
-                    className="w-[100px].h-[100px] .rounded-full"
-                    alt="Profile Image"
-                />
-                <h2 className="text-2x1 font-bold mt-5">
-                    {profile.first_name}
-                </h2>
-            </article>
+            <main className="min-h-screen px-6 py-10 bg-linear-to-b from-black via-gray-900 to-black text-white">
 
-            <section className="grid grid-cols-3 gap-4 px-36">
-                <article className="Obg-black text-nav-gray rounded-box p-10">
-                <h3 className="font-bold">Your data</h3>
-                <p>Name: {profile.first_name} {profile.last_name}</p>
-                <p>Username: {profile.username}</p>
-                <p>Email:{user.email}</p>
+                {user && profile && (
+                    <>
+                    <article className="flex flex-col items-center mb-10">
+                        <img
+                        src={avatarUrl ?? avatar}
+                        alt="Profile Image"
+                        className="w-28 h-28 rounded-full border-4 border-indigo-600 shadow-lg"
+                        />
+                        <h2 className="text-3xl font-bold mt-4">{profile.first_name} {profile.last_name}</h2>
+                        <p className="text-gray-400 mt-1">@{profile.username}</p>
+                    </article>
 
-                <Link className="btn btn-outline mt-3" to={routes.profile_settings}>Settings</Link>
 
-                </article>
-            </section>
+                    <section className="max-w-4xl mx-auto mb-10">
+                        <div className="bg-black/60 backdrop-blur-md rounded-2xl p-8 shadow-lg">
+                        <h3 className="text-2xl font-bold mb-4">I miei Dati:</h3>
+                        <p><span className="font-semibold">Nome:</span> {profile.first_name} {profile.last_name}</p>
+                        <p><span className="font-semibold">Username:</span> {profile.username}</p>
+                        <p><span className="font-semibold">Email:</span> {user.email}</p>
 
-            <section className="grid grid-cols-4 gap-4 my-10">
-                {userFavourites &&
-                    userFavourites.map( (game) =>{
-                        return (
-                            <div className="card bg-base-100 shadow-sm" key={game.id}>
-                                <div className="card-body">
-                                    <h2 className="card-title">{game.game_name}</h2>
-                                </div>
+                        <Link
+                            to={routes.profile_settings}
+                            className="inline-block mt-4 px-6 py-2 border border-indigo-600 rounded-xl hover:bg-indigo-600 hover:text-white transition"
+                        >
+                            Settings
+                        </Link>
+                        </div>
+                    </section>
+
+                    <section className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                        {userFavourites &&
+                        userFavourites.map((game) => (
+                            <div
+                            key={game.id}
+                            className="relative rounded-xl bg-gray-900"
+                            >
+                            <div className="p-4">
+                                <h2 className="text-lg font-semibold text-white">{game.game_name}</h2>
                             </div>
-                        );
-                    })}
-            </section>
+                            </div>
+                        ))}
+                    </section>
+                    </>
+                )}
+            </main>
 
-        </>
-        )}
-        </main>
     )
 }
