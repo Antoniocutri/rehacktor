@@ -40,14 +40,6 @@ export default function Navbar({ onOpenSidebar }) {
         <>
             <nav className="navbar shadow-sm p-4 w-full">
 
-                <button
-                    onClick={onOpenSidebar}
-                    className="btn btn-ghost btn-square  "
-                    aria-label="Apri menu generi"
-                    >
-                    <FaBars className="text-2xl text-neutral hover:text-black!" />
-                </button>
-
                 <div className="flex-1">
                     <Link className="btn btn-ghost text-xl text-neutral hover:text-black!" to={routes.home}>Reactor</Link>
                 </div>
