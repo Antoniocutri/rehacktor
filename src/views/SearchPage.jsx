@@ -7,7 +7,11 @@ export default function SearcPage() {
 
     return(
         <>
-            <h1>Search by slug: {slug}</h1>
+            <h1 className="font-electro text-4xl text-center font-bold my-8 tracking-widest text-white">
+                Ricerca per nome: <span className="text-accent">
+                     {slug}
+                </span>
+            </h1>
 
             <GameList>
                 {games.map((game)=>{
