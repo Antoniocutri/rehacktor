@@ -15,7 +15,7 @@ export default function DetailPage() {
             <main
                 style={{
                 backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)) ,url(${game.background_image})`,}}
-                className="min-h-screen bg-center bg-cover bg-fixed">
+                className="min-h-screen bg-center bg-cover bg-fixed text-white">
 
                 <FaCircleArrowLeft className="text-3xl fixed bottom-6 text-white left-6 cursor-pointer" onClick={ ()=>navigate(-1)}/>
                 <Header game={game} />

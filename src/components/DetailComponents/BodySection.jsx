@@ -70,33 +70,54 @@ export default function BodySection({game, profile_id}){
         setIsFavourite(false);
     };
 
-    return(
-        <section className="grid grid-cols-6 mt-10 px-10">
-            <div className="col-span-5 flex flex-col items-center">
-                <p className="text-white text-xl mb-5">Reviews</p>
-                <textarea
-                    className="textarea w-1/2" 
-                    placeholder="Type your review"
-                    onChange={handle_description}
-                    value={description}></textarea>
+    return (
+        <section className="max-w-7xl mx-auto px-6 mt-16 grid grid-cols-1 lg:grid-cols-6 gap-10">
+            
+            <div className="lg:col-span-5">
+                
+                <h3 className="text-2xl font-bold text-white mb-4">
+                    Reviews
+                </h3>
 
-                <button className="btn btn-accent w-1/2 mt-3" onClick={add_reviews}>Invia</button>
-                <div className="border border-amber-300 h-[200px] w-2/3 my-3 overflow-auto text-white">
-                    {gameReviews && gameReviews.map((review)=>{
-                        return(
-                            <p key={review.id} className="text-end my-3 mx-2 p-2 border border-white">{review.description}</p>
-                        )
-                    })
-                    }
+                <textarea
+                    className="w-full lg:w-2/3 min-h-[120px] rounded-xl bg-black/50 text-white p-4 border border-gray-700 focus:ring-2 focus:ring-indigo-500 focus:outline-none placeholder-gray-400"
+                    placeholder="Type your review..."
+                    onChange={handle_description}
+                    value={description}
+                />
+
+                <button
+                    className="w-1/2 mt-4 mx-auto px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 transition text-white font-semibold"
+                    onClick={add_reviews}
+                >
+                    Invia recensione
+                </button>
+
+                <div className="my-8 max-h-[250px] overflow-y-auto space-y-3 pr-2">
+                    {gameReviews &&
+                    gameReviews.map((review) => (
+                        <div
+                            key={review.id}
+                            className="bg-black/40 border border-gray-700 rounded-lg p-3 text-white text-sm">
+                            {review.description}
+                        </div>
+                    ))}
                 </div>
             </div>
-            <div>
-                {isFavourite && 
-                    <FaHeart className="text-red-500 cursor-pointer text-3xl" onClick={remove_game}/>
-                ||
-                    <FaRegHeart className="text-red-500 cursor-pointer text-3xl" onClick={add_game}/>
-                }
+
+            <div className="flex justify-center lg:justify-start items-start pt-10">
+                {isFavourite && (
+                    <FaHeart
+                        className="text-red-500 cursor-pointer text-4xl hover:scale-110 transition-transform"
+                        onClick={remove_game}
+                    />
+                ) || (
+                    <FaRegHeart
+                        className="text-red-500 cursor-pointer text-4xl hover:scale-110 transition-transform"
+                        onClick={add_game}
+                    />
+                )}
             </div>
         </section>
-    )
+    );
 }
