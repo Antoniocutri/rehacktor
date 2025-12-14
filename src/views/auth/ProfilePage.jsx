@@ -72,7 +72,7 @@ export default function ProfilePage() {
                     <section className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                         {userFavourites &&
                         userFavourites.map((game) => (
-                            <Link to={`/detail/${game.id}`}>
+                            <Link to={`/detail/${game.game_id}`}>
                                 <div key={game.id} className="relative rounded-xl bg-gray-900">
                                     <div className="p-4">
                                         <h2 className="text-lg font-semibold text-white">{game.game_name}</h2>
