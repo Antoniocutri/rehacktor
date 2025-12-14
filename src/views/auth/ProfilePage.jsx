@@ -15,7 +15,7 @@ export default function ProfilePage() {
             const { data, error } = await supabase.storage
                 .from("avatars")
                 .download(profile.avatar_url);
-            const url = URL. createObjectURL(data);
+            const url = URL.createObjectURL(data);
             setAvatarUrl(url);
         }
     }
@@ -23,7 +23,7 @@ export default function ProfilePage() {
     const get_favourite = async () =>{
         if (profile) {
             let { data: favourites, error } = await supabase
-                . from("favourites")
+                .from("favourites")
                 .select("*")
                 .eq("profile_id", profile.id);
             setUserFavourites(favourites);
