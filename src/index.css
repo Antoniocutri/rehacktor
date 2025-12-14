@@ -7,3 +7,19 @@
     --color-nav-grey: #d8d8d8
 }
 @plugin "daisyui";
+
+:root {
+  --color-background: #1A1A1A;
+  --color-secondary: #2D2D2D;
+  --color-accent: #A8FF00;
+  --color-text: #FFFFFF;
+  --color-neutral: #AAAAAA;
+}
+
+nav, footer{
+    background-color: var(--color-secondary);
+}
+
+.text-neutral{
+    color: var(--color-neutral);
+}
