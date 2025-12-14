@@ -37,7 +37,7 @@ export default function RegisterPage() {
 
     return(
         <>
-            <main className="h-screen flex justify-center items-center bg-gray-100 p-4">
+            <main className="h-screen flex justify-center items-center p-4">
                 <section className="bg-white shadow-xl rounded-2xl p-8 w-full max-w-md">
                     <h1 className="text-2xl font-bold text-center mb-6">Registrati</h1>
 
@@ -59,7 +59,7 @@ export default function RegisterPage() {
                         </div>
 
                         <div>
-                            <label className="flex items-center gap-2 mb-1 font-medium"> <FaUser /> Nome </label>
+                            <label className="flex items-center gap-2 mb-1 font-medium"> <FaUser /> Cognome </label>
                             <input
                                 type="text"
                                 name="last_name"
@@ -74,7 +74,7 @@ export default function RegisterPage() {
                         </div>
 
                         <div>
-                            <label className="flex items-center gap-2 mb-1 font-medium"> <FaUser /> Nome </label>
+                            <label className="flex items-center gap-2 mb-1 font-medium"> <FaUser /> Username </label>
                             <input
                                 type="text"
                                 name="username"

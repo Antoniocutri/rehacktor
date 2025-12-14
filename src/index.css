@@ -20,6 +20,14 @@ nav, footer{
     background-color: var(--color-secondary);
 }
 
+body{
+    background-color: var(--color-background);
+}
+
+.sidebar{
+    background-color: var(--color-neutral);
+}
+
 .text-neutral{
     color: var(--color-neutral);
 }

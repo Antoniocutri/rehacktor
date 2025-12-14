@@ -26,7 +26,7 @@ export default function LoginPage() {
     };
 
   return (
-    <main className="h-screen flex justify-center items-center bg-gray-100 p-4">
+    <main className="h-screen flex justify-center items-center p-4">
       <section className="bg-white shadow-xl rounded-2xl p-8 w-full max-w-md">
         <h1 className="text-2xl font-bold text-center mb-6">Accedi</h1>
 
