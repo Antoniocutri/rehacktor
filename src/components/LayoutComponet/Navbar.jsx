@@ -29,30 +29,6 @@ export default function Navbar() {
                 </div>
                 <div className="flex gap-2">
 
-                    <ul>
-                        {(!user &&( 
-                            <>
-                                <li>
-                                    <Link to={routes.register}>Registrati</Link>
-                                </li>
-                                <li>
-                                    <Link to={routes.login}>Login</Link>
-                                </li>
-                            </>
-                        ))||
-                        <>
-                            <li>
-                               <Link to={routes.profile}>Profile</Link> 
-                            </li>
-
-                            <li onClick={handleLogout}>
-                                <p>Logout</p>
-                            </li>
-                        </>
-                        }
-                    </ul>
-                    
-
                     <input type="text" placeholder="Search" onChange={handleChange} className="input input-bordered w-24 md:w-auto" />
                     <Link className="btn btn-square" to={`/search/${slug}`}><FaSearch/></Link>
 
@@ -69,14 +45,29 @@ export default function Navbar() {
                         <ul
                             tabIndex="-1"
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                            <li>
-                                <a className="justify-between">
-                                    Profile
-                                    <span className="badge">New</span>
-                                </a>
-                            </li>
-                            <li><a>Settings</a></li>
-                            <li><a>Logout</a></li>
+                            {(!user &&( 
+                                <>
+                                    <li>
+                                        <Link className="justify-between" to={routes.register}>Registrati</Link>
+                                    </li>
+                                    <li>
+                                        <Link className="justify-between" to={routes.login}>Login</Link>
+                                    </li>
+                                </>
+                            )) ||
+                            <>
+                                <li>
+                                    <Link className="justify-between" to={routes.profile}>Profile</Link> 
+                                </li>
+
+                                <li><a>Settings</a></li>
+
+                                <li className="justify-between" onClick={handleLogout}>
+                                    <p>Logout</p>
+                                </li>
+                            </>
+                            }
+
                         </ul>
                     </div>
                 </div>
