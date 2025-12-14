@@ -3,10 +3,10 @@ import { FaSearch } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import routes from "../../router/routes";
 import { UserContext } from "../../context/UserContext";
-import { FaArrowRightToBracket } from "react-icons/fa6";
+import { FaArrowRightToBracket, FaBars } from "react-icons/fa6";
 import supabase from "../../database/supabase";
 
-export default function Navbar() {
+export default function Navbar({ onOpenSidebar }) {
     const [slug, setSlug] = useState();
     const [avatarUrl, setAvatarUrl]= useState()
     const {user, signOut, profile} = useContext(UserContext)
@@ -38,7 +38,16 @@ export default function Navbar() {
 
     return(
         <>
-            <nav className="navbar shadow-sm p-4">
+            <nav className="navbar shadow-sm p-4 w-full">
+
+                <button
+                    onClick={onOpenSidebar}
+                    className="btn btn-ghost btn-square  "
+                    aria-label="Apri menu generi"
+                    >
+                    <FaBars className="text-2xl text-neutral hover:text-black!" />
+                </button>
+
                 <div className="flex-1">
                     <Link className="btn btn-ghost text-xl text-neutral hover:text-black!" to={routes.home}>Reactor</Link>
                 </div>
@@ -48,7 +57,7 @@ export default function Navbar() {
                     <Link className="btn btn-square me-6" to={`/search/${slug}`}><FaSearch/></Link>
 
                     <div className="dropdown dropdown-end">
-                        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar me-4">
                             <div className="w-10 rounded-full">
                                 {(user &&( 
                                     <img
