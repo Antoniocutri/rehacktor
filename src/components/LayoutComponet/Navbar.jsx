@@ -41,7 +41,7 @@ export default function Navbar({ onOpenSidebar }) {
             <nav className="navbar shadow-sm p-4 w-full">
 
                 <div className="flex-1">
-                    <Link className="btn btn-ghost text-xl text-neutral hover:text-black!" to={routes.home}>Reactor</Link>
+                    <Link className="btn btn-ghost text-xl text-white hover:text-black!" to={routes.home}>Reactor</Link>
                 </div>
                 <div className="flex gap-2">
 
