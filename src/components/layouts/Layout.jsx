@@ -12,10 +12,10 @@ export default function Layout() {
             <Navbar/>
 
             <section className="grid grid-cols-7 gap-4">
-                <div>
+                <div className="col-span-5 md:col-span-1">
                     <Sidebar genres={genres} />
                 </div>
-                <div className="col-span-6">
+                <div className="col-span-7 md:col-span-6">
                     <Outlet />
                 </div>
             </section>
