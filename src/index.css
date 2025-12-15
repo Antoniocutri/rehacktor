@@ -9,7 +9,7 @@
 @plugin "daisyui";
 
 :root {
-  --color-background: #1A1A1A;
+  --color-background: #111827;
   --color-secondary: #2D2D2D;
   --color-accent: #A8FF00;
   --color-text: #FFFFFF;
@@ -21,11 +21,12 @@ nav, footer{
 }
 
 body{
-    background-color: var(--color-background);
-}
-
-.sidebar{
-    background-color: var(--color-neutral);
+    background: linear-gradient(
+    to bottom,
+    #000000,
+    #111827,
+    #000000
+  );
 }
 
 .text-neutral{

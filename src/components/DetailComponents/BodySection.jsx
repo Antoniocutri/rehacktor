@@ -87,7 +87,7 @@ export default function BodySection({game, profile_id}){
                 />
 
                 <button
-                    className="w-1/2 mt-4 mx-auto px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 transition text-white font-semibold"
+                    className="btn btn-primary w-1/2 mt-4 mx-auto px-6 py-3 rounded-xl font-semibold"
                     onClick={add_reviews}
                 >
                     Invia recensione

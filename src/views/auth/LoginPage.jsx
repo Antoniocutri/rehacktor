@@ -27,7 +27,7 @@ export default function LoginPage() {
 
   return (
     <main className="h-screen flex justify-center items-center p-4">
-      <section className="bg-white shadow-xl rounded-2xl p-8 w-full max-w-md">
+      <section className="bg-gray-700 rounded-2xl p-8 w-full max-w-md text-gray-100 ">
         <h1 className="text-2xl font-bold text-center mb-6">Accedi</h1>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
@@ -74,7 +74,7 @@ export default function LoginPage() {
 
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-3 rounded-xl shadow hover:bg-blue-700 transition">
+            className="btn btn-primary w-full py-3 rounded-xl shadow">
             Accedi
           </button>
         </form>

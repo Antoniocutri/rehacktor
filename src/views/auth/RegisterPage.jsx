@@ -38,7 +38,7 @@ export default function RegisterPage() {
     return(
         <>
             <main className="h-screen flex justify-center items-center p-4">
-                <section className="bg-white shadow-xl rounded-2xl p-8 w-full max-w-md">
+                <section className="bg-gray-700 text-gray-100 rounded-2xl p-8 w-full max-w-md">
                     <h1 className="text-2xl font-bold text-center mb-6">Registrati</h1>
 
                     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
@@ -120,7 +120,7 @@ export default function RegisterPage() {
                         </div>
 
                         <button
-                            className="w-full py-3 rounded-xl btn btn-neutral">
+                            className="w-full py-3 rounded-xl btn btn-primary">
                             Registrati
                         </button>
                     </form>

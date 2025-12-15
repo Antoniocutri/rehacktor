@@ -38,7 +38,7 @@ export default function ProfilePage() {
     )
 
     return(
-            <main className="min-h-screen px-6 py-10 bg-linear-to-b from-black via-gray-900 to-black text-white">
+            <main className="min-h-screen px-6 py-10 text-white">
 
                 {user && profile && (
                     <>

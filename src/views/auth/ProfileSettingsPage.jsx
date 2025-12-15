@@ -52,7 +52,7 @@ export default function ProfileSettingsPage(){
     }
 
     return(
-        <main className="min-h-screen flex flex-col md:flex-row justify-center items-start gap-10 px-6 py-10 bg-linear-to-b from-black via-gray-900 to-black text-white">
+        <main className="min-h-screen flex flex-col md:flex-row justify-center items-center gap-10 px-6 py-10 text-white">
 
             <form
                 onSubmit={handleSubmit(onSubmit)}
