@@ -55,31 +55,36 @@ export default function ProfilePage() {
 
                     <section className="max-w-4xl mx-auto mb-10">
                         <div className="bg-black/60 backdrop-blur-md rounded-2xl p-8 shadow-lg">
-                        <h3 className="text-2xl font-bold mb-4">I miei Dati:</h3>
-                        <p><span className="font-semibold">Nome:</span> {profile.first_name} {profile.last_name}</p>
-                        <p><span className="font-semibold">Username:</span> {profile.username}</p>
-                        <p><span className="font-semibold">Email:</span> {user.email}</p>
+                            <h3 className="text-2xl font-bold mb-4">I miei Dati:</h3>
+                            <p><strong className="font-semibold">Nome:</strong> {profile.first_name} {profile.last_name}</p>
+                            <p><strong className="font-semibold">Username:</strong> {profile.username}</p>
+                            <p><strong className="font-semibold">Email:</strong> {user.email}</p>
 
-                        <Link
-                            to={routes.profile_settings}
-                            className="inline-block mt-4 px-6 py-2 border border-indigo-600 rounded-xl hover:bg-indigo-600 hover:text-white transition"
-                        >
-                            Settings
-                        </Link>
+                            <Link
+                                to={routes.profile_settings}
+                                className="inline-block mt-4 px-6 py-2 border border-indigo-600 rounded-xl hover:bg-indigo-600 hover:text-white transition"
+                            >
+                                Settings
+                            </Link>
                         </div>
                     </section>
 
-                    <section className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                        {userFavourites &&
-                        userFavourites.map((game) => (
-                            <Link to={`/detail/${game.game_id}`}>
-                                <div key={game.id} className="relative rounded-xl bg-gray-900">
-                                    <div className="p-4">
-                                        <h2 className="text-lg font-semibold text-white">{game.game_name}</h2>
+                    <section className="max-w-6xl mx-auto ">
+                        <div className="block">
+                            <h2 className="text-2xl font-bold mb-4">I miei giochi preferiti</h2>
+                        </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                            {userFavourites &&
+                            userFavourites.map((game) => (
+                                <Link to={`/detail/${game.game_id}`}>
+                                    <div key={game.id} className="relative rounded-xl bg-gray-900">
+                                        <div className="p-4">
+                                            <h2 className="text-lg font-semibold text-white">{game.game_name}</h2>
+                                        </div>
                                     </div>
-                                </div>
-                            </Link>
-                        ))}
+                                </Link>
+                            ))}
+                        </div>
                     </section>
                     </>
                 )}
