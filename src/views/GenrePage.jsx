@@ -7,7 +7,7 @@ export default function GenrePage() {
 
     return(
         <>
-            <h1 className="font-electro text-4xl text-center font-bold my-8 tracking-widest text-white">
+            <h1 className="font-electro text-4xl text-center font-bold mb-6 md:my-8 tracking-widest text-white">
                 Filtered by genre: <span className="text-accent">
                      {slug}
                 </span>
