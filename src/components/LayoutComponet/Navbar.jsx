@@ -23,7 +23,7 @@ export default function Navbar({ onOpenSidebar }) {
 
     useEffect(()=>{
         download_avatar()
-    }, [])
+    }, [profile])
 
     const handleChange = (e) =>{
         setSlug(e.target.value)
@@ -51,11 +51,11 @@ export default function Navbar({ onOpenSidebar }) {
                     <div className="dropdown dropdown-end">
                         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar me-4">
                             <div className="w-10 rounded-full">
-                                {(user &&( 
+                                {(user && ( 
                                     <img
                                         alt="Tailwind CSS Navbar component"
                                         src={avatarUrl ?? "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"} />
-                                ))|| <FaArrowRightToBracket className="text-3xl text-neutral hover:text-black!"/>}
+                                ))|| <FaArrowRightToBracket className="text-3xl text-white hover:text-black! mt-1 ms-0.5"/>}
                             </div>
                         </div>
                         <ul
