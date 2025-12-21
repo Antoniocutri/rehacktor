@@ -10,6 +10,7 @@ export default function ProfileSettingsPage(){
     const [file, setFile] = useState()
     const [preview, setPreview] = useState()
     const {profile, getUser} = useContext(UserContext)
+    const navigate = useNavigate()
 
     const handleChange = (e) => {
         setFile(()=> e.target.files[0])
@@ -34,6 +35,7 @@ export default function ProfileSettingsPage(){
             .upsert({ id: profile.id, avatar_url: fileName })
             .select();
         await getUser();
+        navigate(routes.profile)
     };
 
     const {updateProfile} = useContext(UserContext)
@@ -43,8 +45,6 @@ export default function ProfileSettingsPage(){
         handleSubmit,
         formState: { errors },
     } = useForm();
-
-    const navigate = useNavigate()
 
     const onSubmit = (data) =>{
         updateProfile(data)
