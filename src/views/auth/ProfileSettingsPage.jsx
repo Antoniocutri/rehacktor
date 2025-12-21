@@ -108,7 +108,7 @@ export default function ProfileSettingsPage(){
                 </div>
 
                 <button
-                className="w-full py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 transition text-white font-semibold"
+                className="w-full py-3 rounded-xl btn btn-primary font-semibold"
                 >
                 Modifica
                 </button>
@@ -126,7 +126,7 @@ export default function ProfileSettingsPage(){
                 onChange={handleChange}
                 />
 
-                <button className="w-full py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 transition text-white font-semibold">
+                <button className="w-full py-3 rounded-xl btn btn-primary font-semibold">
                 Change Avatar
                 </button>
 

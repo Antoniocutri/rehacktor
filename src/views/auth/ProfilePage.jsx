@@ -62,7 +62,7 @@ export default function ProfilePage() {
 
                             <Link
                                 to={routes.profile_settings}
-                                className="inline-block mt-4 px-6 py-2 border border-indigo-600 rounded-xl hover:bg-indigo-600 hover:text-white transition"
+                                className="inline-block mt-4 px-6 py-2 btn btn-outline btn-primary rounded-xl"
                             >
                                 Settings
                             </Link>
