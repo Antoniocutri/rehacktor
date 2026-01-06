@@ -15,7 +15,7 @@ export default function Sidebar({genres}) {
                     </label>
 
                     <select
-                        className="w-full bg-gray-900 border border-gray-700 rounded-md px-3 py-2"
+                        className="select w-full bg-gray-900 rounded-md px-3 py-2"
                         defaultValue=""
                         onChange={(e) => navigate(`/genre/${e.target.value}`)}
                     >
@@ -41,10 +41,10 @@ export default function Sidebar({genres}) {
                         {genres.map((genre) => (
                         <li key={genre.id}>
                             <Link
-                            to={`/genre/${genre.slug}`}
-                            className="block px-3 py-2 rounded-md hover:bg-indigo-600"
+                                to={`/genre/${genre.slug}`}
+                                className="block px-3 py-2 rounded-md hover:bg-indigo-600"
                             >
-                            {genre.name}
+                                {genre.name}
                             </Link>
                         </li>
                         ))}

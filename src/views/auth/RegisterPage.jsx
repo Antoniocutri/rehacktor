@@ -54,7 +54,7 @@ export default function RegisterPage() {
                                 })}
                             />
                             {errors.first_name && (
-                                <p role="alert" className="text-red-500 text-sm mt-1">{errors.first_name.message}</p>
+                                <p role="alert" className="text-red-400 text-sm mt-1">{errors.first_name.message}</p>
                             )}
                         </div>
 
@@ -69,7 +69,7 @@ export default function RegisterPage() {
                                 })}
                             />
                             {errors.last_name && (
-                                <p role="alert" className="text-red-500 text-sm mt-1">{errors.last_name.message}</p>
+                                <p role="alert" className="text-red-400 text-sm mt-1">{errors.last_name.message}</p>
                             )}
                         </div>
 
@@ -84,7 +84,7 @@ export default function RegisterPage() {
                                 })}
                             />
                             {errors.username && (
-                                <p role="alert" className="text-red-500 text-sm mt-1">{errors.username.message}</p>
+                                <p role="alert" className="text-red-400 text-sm mt-1">{errors.username.message}</p>
                             )}
                         </div>
 
@@ -99,7 +99,7 @@ export default function RegisterPage() {
                                 })}
                             />
                             {errors.email && (
-                                <p role="alert" className="text-red-500 text-sm mt-1">{errors.email.message}</p>
+                                <p role="alert" className="text-red-400 text-sm mt-1">{errors.email.message}</p>
                             )}
                         </div>
 
@@ -115,7 +115,7 @@ export default function RegisterPage() {
                                 })}
                             />
                             {errors.password && (
-                                <p role="alert" className="text-red-500 text-sm mt-1">{errors.password.message}</p>
+                                <p role="alert" className="text-red-400 text-sm mt-1">{errors.password.message}</p>
                             )}
                         </div>
 

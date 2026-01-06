@@ -45,7 +45,7 @@ export default function Navbar({ onOpenSidebar }) {
                 </div>
                 <div className="flex gap-2">
 
-                    <input type="text" placeholder="Search" onChange={handleChange} className="input input-bordered w-24 md:w-auto" />
+                    <input type="text" placeholder="Search" onChange={handleChange} className="input w-24 md:w-auto" />
                     <Link className="btn btn-square me-6" to={`/search/${slug}`}><FaSearch/></Link>
 
                     <div className="dropdown dropdown-end">

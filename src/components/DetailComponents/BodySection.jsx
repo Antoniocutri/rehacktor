@@ -80,7 +80,7 @@ export default function BodySection({game, profile_id}){
                 </h3>
 
                 <textarea
-                    className="w-full lg:w-2/3 min-h-[120px] rounded-xl bg-black/50 text-white p-4 border border-gray-700 focus:ring-2 focus:ring-indigo-500 focus:outline-none placeholder-gray-400"
+                    className="w-full lg:w-2/3 min-h-[120px] rounded-xl textarea textarea-primary textarea-ghost bg-black/50 text-white"
                     placeholder="Type your review..."
                     onChange={handle_description}
                     value={description}

@@ -68,11 +68,11 @@ export default function ProfileSettingsPage(){
                     <input
                     type="text"
                     name="first_name"
-                    className="w-full border border-gray-700 rounded-xl p-3 bg-black/30 text-white placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                    className="w-full rounded-xl p-3 border border-gray-700 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
                     {...register("first_name", { required: "This field is required" })}
                     />
                     {errors.first_name && (
-                    <p role="alert" className="text-red-500 text-sm mt-1">{errors.first_name.message}</p>
+                    <p role="alert" className="text-red-400 text-sm mt-1">{errors.first_name.message}</p>
                     )}
                 </div>
 
@@ -83,11 +83,11 @@ export default function ProfileSettingsPage(){
                     <input
                     type="text"
                     name="last_name"
-                    className="w-full border border-gray-700 rounded-xl p-3 bg-black/30 text-white placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                    className="w-full border border-gray-700 rounded-xl p-3 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
                     {...register("last_name", { required: "This field is required" })}
                     />
                     {errors.last_name && (
-                    <p role="alert" className="text-red-500 text-sm mt-1">{errors.last_name.message}</p>
+                    <p role="alert" className="text-red-400 text-sm mt-1">{errors.last_name.message}</p>
                     )}
                 </div>
 
@@ -98,17 +98,17 @@ export default function ProfileSettingsPage(){
                     <input
                     type="text"
                     name="username"
-                    className="w-full border border-gray-700 rounded-xl p-3 bg-black/30 text-white placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                    className="w-full border border-gray-700 rounded-xl p-3 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
                     {...register("username", { required: "This field is required" })}
                     />
                     {errors.username && (
-                    <p role="alert" className="text-red-500 text-sm mt-1">{errors.username.message}</p>
+                    <p role="alert" className="text-red-400 text-sm mt-1">{errors.username.message}</p>
                     )}
                 </div>
                 </div>
 
                 <button
-                className="w-full py-3 rounded-xl btn btn-primary font-semibold"
+                    className="w-full py-3 rounded-xl btn btn-primary font-semibold"
                 >
                 Modifica
                 </button>
@@ -127,7 +127,7 @@ export default function ProfileSettingsPage(){
                 />
 
                 <button className="w-full py-3 rounded-xl btn btn-primary font-semibold">
-                Change Avatar
+                    Change Avatar
                 </button>
 
                 {preview && (

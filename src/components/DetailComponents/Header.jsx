@@ -31,7 +31,7 @@ export default function Header({ game }) {
             {game.genres.map((genre) => (
                 <Link to={`/genre/${genre.slug}`}
                     key={genre.id}
-                    className="px-3 py-1 rounded-full bg-indigo-600/20 border border-indigo-400/30 text-sm">
+                    className="px-3 py-1 badge badge-primary">
                         {genre.name}
                 </Link>
             ))}
